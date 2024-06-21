@@ -240,6 +240,8 @@ class __login__:
             logout_click_check = del_logout.button(self.logout_button_name)
 
             if logout_click_check == True:
+                if os.path.exists('dataset.csv'):
+                    os.remove('dataset.csv')
                 st.session_state['LOGOUT_BUTTON_HIT'] = True
                 st.session_state['LOGGED_IN'] = False
                 self.cookies['__streamlit_login_signup_ui_username__'] = '1c9a923f-fb21-4a91-b3f3-5f18e3f01182'
