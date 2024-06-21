@@ -119,12 +119,11 @@ class __login__:
                         st.experimental_rerun()
 
 
-    def animation(self) -> None:
+    def image(self) -> None:
         """
         Renders the lottie animation.
         """
-        lottie_json = load_lottieurl(self.lottie_url)
-        st_lottie(lottie_json, width = self.width, height = self.height)
+        st.image("images/logo-full-removebg.png", output_format="PNG", width=400)
 
 
     def sign_up_widget(self) -> None:
@@ -300,12 +299,12 @@ class __login__:
         main_page_sidebar, selected_option = self.nav_sidebar()
 
         if selected_option == 'Login':
-            c1, c2 = st.columns([7,3])
+            c1, c2 = st.columns((1,1), gap="large")
             with c1:
                 self.login_widget()
             with c2:
                 if st.session_state['LOGGED_IN'] == False:
-                    self.animation()
+                    self.image()
         
         if selected_option == 'Create Account':
             self.sign_up_widget()
