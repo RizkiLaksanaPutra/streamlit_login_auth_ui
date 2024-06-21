@@ -97,6 +97,7 @@ class __login__:
         if st.session_state['LOGGED_IN'] == False:
             st.session_state['LOGOUT_BUTTON_HIT'] = False 
 
+            st.title("Login Form")
             del_login = st.empty()
             with del_login.form("Login Form"):
                 username = st.text_input("Username", placeholder = 'Your unique username')
@@ -130,6 +131,7 @@ class __login__:
         """
         Creates the sign-up widget and stores the user info in a secure way in the _secret_auth_.json file.
         """
+        st.title("Create Account")
         with st.form("Sign Up Form"):
             name_sign_up = st.text_input("Name *", placeholder = 'Please enter your name')
             valid_name_check = check_valid_name(name_sign_up)
